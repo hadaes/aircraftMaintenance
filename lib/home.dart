@@ -66,6 +66,12 @@ class Home extends StatelessWidget {
                 ),
               ],
             ),
+            Divider(
+              height: 50.0,
+            ),
+            Card(
+              child: Image.asset("assets/N288MC.jpg"),
+            )
           ],
         ),
       ),
