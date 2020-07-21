@@ -4,6 +4,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[900],
       appBar: AppBar(
         title: const Text(
           "N288MC",
@@ -68,7 +69,6 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: Colors.blue[900],
     );
   }
 }
