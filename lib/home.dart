@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
           children: <Widget>[
             Container(
               margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 40.0),
-              child: Text(
+              child: const Text(
                 "Aircraft Maintenance Items",
                 style: TextStyle(
                   color: Colors.white,
