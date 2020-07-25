@@ -17,6 +17,7 @@ class Home extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.fromLTRB(30, 30, 30, 0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
               margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 40.0),
@@ -46,9 +47,6 @@ class Home extends StatelessWidget {
                 ),
               ],
             ),
-            Divider(
-              height: 100.0,
-            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -66,10 +64,7 @@ class Home extends StatelessWidget {
                 ),
               ],
             ),
-            Divider(
-              height: 50.0,
-            ),
-            Card(
+            Container(
               child: Image.asset("assets/N288MC.jpg"),
             )
           ],
