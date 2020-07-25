@@ -15,12 +15,11 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.blue[900],
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(30, 30, 30, 0),
+        padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 40.0),
               child: const Text(
                 "Aircraft Maintenance Items",
                 style: TextStyle(
