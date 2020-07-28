@@ -65,12 +65,14 @@ class Home extends StatelessWidget {
               ],
             ),
             Container(
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(30.0)),
-              child: Image(
-                image: AssetImage("assets/N288MC.jpg"),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(50.0),
+                child: Image(
+                  image: AssetImage("assets/N288MC.jpg"),
+                  height: MediaQuery.of(context).size.height * (0.35),
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),
