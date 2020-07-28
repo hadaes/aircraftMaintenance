@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Home(),
       title: "Aicraft Maintenance",
       theme: ThemeData(
