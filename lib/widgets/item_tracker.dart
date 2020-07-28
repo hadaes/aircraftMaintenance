@@ -31,16 +31,20 @@ class _ItemTrackerState extends State<ItemTracker> {
           Text(
             "Item",
             style: TextStyle(
-              color: Colors.white,
-              fontSize: 15.0,
-              fontWeight: FontWeight.w600,
-            ),
+                color: Colors.white,
+                fontSize: 15.0,
+                fontWeight: FontWeight.w600,
+                fontFamily: "Montserrat"),
           ),
           RaisedButton(
             color: Colors.black,
             child: Text(
               "Set date",
-              style: TextStyle(color: Colors.white, letterSpacing: 1.2),
+              style: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: 1.2,
+                  fontFamily: "Montserrat",
+                  fontWeight: FontWeight.w800),
             ),
             onPressed: () {
               selectDate(context);
@@ -48,7 +52,11 @@ class _ItemTrackerState extends State<ItemTracker> {
           ),
           Text(
             "${_date.day} - ${_date.month} - ${_date.year}",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w900),
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w900,
+              fontFamily: "Montserrat",
+            ),
           ),
         ],
       ),
