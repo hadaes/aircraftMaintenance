@@ -17,7 +17,6 @@ class _ItemTrackerState extends State<ItemTracker> {
     );
 
     if (picked != null && picked != _date) {
-      print(_date.toString());
       setState(() {
         _date = picked;
       });
@@ -27,11 +26,31 @@ class _ItemTrackerState extends State<ItemTracker> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: FlatButton(
-        child: Text("Set date"),
-        onPressed: () {
-          selectDate(context);
-        },
+      child: Column(
+        children: [
+          Text(
+            "Item",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 15.0,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          RaisedButton(
+            color: Colors.black,
+            child: Text(
+              "Set date",
+              style: TextStyle(color: Colors.white, letterSpacing: 1.2),
+            ),
+            onPressed: () {
+              selectDate(context);
+            },
+          ),
+          Text(
+            "${_date.day} - ${_date.month} - ${_date.year}",
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w900),
+          ),
+        ],
       ),
     );
   }
