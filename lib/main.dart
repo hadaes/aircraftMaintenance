@@ -13,6 +13,11 @@ class MyApp extends StatelessWidget {
     ]);
     return MaterialApp(
       home: Home(),
+      title: "Aicraft Maintenance",
+      theme: ThemeData(
+          primaryColor: Colors.blue[900],
+          accentColor: Color(0x111585),
+          scaffoldBackgroundColor: Color(0x111585)),
     );
   }
 }
