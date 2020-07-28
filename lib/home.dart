@@ -4,15 +4,16 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[900],
+      backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
+        centerTitle: true,
         title: const Text(
           "N288MC",
           style: TextStyle(
             fontFamily: "Montserrat",
           ),
         ),
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Theme.of(context).accentColor,
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
@@ -64,7 +65,11 @@ class Home extends StatelessWidget {
               ],
             ),
             Container(
-              child: Image.asset("assets/N288MC.jpg"),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(30.0)),
+              child: Image(
+                image: AssetImage("assets/N288MC.jpg"),
+              ),
             )
           ],
         ),
