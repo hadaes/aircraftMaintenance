@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:aircraftMaintenance/widgets/item_tracker.dart";
 
 class Home extends StatelessWidget {
   @override
@@ -33,35 +34,9 @@ class Home extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Placeholder(
-                  fallbackHeight: 40.0,
-                  fallbackWidth: 40.0,
-                ),
-                Placeholder(
-                  fallbackHeight: 40.0,
-                  fallbackWidth: 40.0,
-                ),
-                Placeholder(
-                  fallbackHeight: 40.0,
-                  fallbackWidth: 40.0,
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Placeholder(
-                  fallbackHeight: 40.0,
-                  fallbackWidth: 40.0,
-                ),
-                Placeholder(
-                  fallbackHeight: 40.0,
-                  fallbackWidth: 40.0,
-                ),
-                Placeholder(
-                  fallbackHeight: 40.0,
-                  fallbackWidth: 40.0,
-                ),
+                ItemTracker(),
+                ItemTracker(),
+                ItemTracker(),
               ],
             ),
             Container(
