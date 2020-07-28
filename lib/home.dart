@@ -16,6 +16,14 @@ class Home extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).accentColor,
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            Text("About"),
+            Text("Home"),
+          ],
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
         child: Column(
