@@ -7,10 +7,20 @@ class About extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Theme.of(context).accentColor,
         title: Text("About"),
       ),
       drawer: DrawerWidget(),
+      body: Center(
+        child: Text(
+          "By Jack Scherlag",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 25.0,
+            fontFamily: "Montserrat",
+          ),
+        ),
+      ),
     );
   }
 }
