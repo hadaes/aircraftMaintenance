@@ -1,3 +1,4 @@
+import 'package:aircraftMaintenance/about.dart';
 import "package:flutter/material.dart";
 import "package:aircraftMaintenance/home.dart";
 import "package:flutter/services.dart";
@@ -13,7 +14,11 @@ class MyApp extends StatelessWidget {
     ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => Home(),
+        "/about": (context) => About(),
+      },
       title: "Aicraft Maintenance",
       theme: ThemeData(
           primaryColor: Colors.blue[900],
