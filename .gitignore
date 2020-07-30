@@ -44,3 +44,5 @@ app.*.map.json
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 ios/Flutter/Generated 2.xcconfig
 ios/Flutter/flutter_export_environment 2.sh
+ios/Flutter/flutter_export_environment 3.sh
+ios/Flutter/Generated 3.xcconfig
