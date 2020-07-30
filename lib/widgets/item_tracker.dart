@@ -1,4 +1,9 @@
 import "package:flutter/material.dart";
+import "dart:convert";
+import "dart:io";
+import "package:flutter/services.dart";
+import "package:path_provider/path_provider.dart";
+import "dart:async";
 
 class ItemTracker extends StatefulWidget {
   @override
@@ -7,6 +12,24 @@ class ItemTracker extends StatefulWidget {
 
 class _ItemTrackerState extends State<ItemTracker> {
   DateTime _date = DateTime.now();
+
+  Future<String> get _localPath async {
+    final directory = await getApplicationDocumentsDirectory();
+
+    return directory.path;
+  }
+
+  Future<File> get _localFile async {
+    final path = await _localPath;
+    return File('$path/due_dates.json');
+  }
+
+  Future<Map<String,int>> get _read async {
+    File file = await _localFile;
+    String text = await file.readAsString();
+    Map<String,int> dateMap = json.decode(text);
+    return dateMap;
+  }
 
   Future<Null> selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
@@ -20,6 +43,18 @@ class _ItemTrackerState extends State<ItemTracker> {
       setState(() {
         _date = picked;
       });
+      Map<String, int> jsonMap = {
+        "day": _date.day,
+        "month": _date.month,
+        "year": _date.year,
+      };
+      try {
+        File file = await _localFile;
+        String jsonString = json.encode(jsonMap);
+        await file.writeAsString(jsonString);
+      } catch (e) {
+        print("Error $e");
+      }
     }
   }
 
@@ -50,8 +85,8 @@ class _ItemTrackerState extends State<ItemTracker> {
               selectDate(context);
             },
           ),
-          Text(
-            "${_date.day} - ${_date.month} - ${_date.year}",
+          Text(_date == DateTime.now() ?
+            "${_date.month} - ${_date.day} - ${_date.year}" : "$_date[""," //fix this
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w900,
