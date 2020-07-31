@@ -36,7 +36,7 @@ class Home extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ItemTracker(),
+                ItemTracker(item: "ELT"),
                 // ItemTracker(),
                 // ItemTracker(),
               ],
