@@ -1,34 +1,28 @@
+import 'package:aircraftMaintenance/classes/file_utilis.dart';
 import "package:flutter/material.dart";
-import "dart:convert";
-import "dart:io";
-import "package:flutter/services.dart";
-import "package:path_provider/path_provider.dart";
 import "dart:async";
 
 class ItemTracker extends StatefulWidget {
+  final String item;
+  ItemTracker({this.item});
   @override
   _ItemTrackerState createState() => _ItemTrackerState();
 }
 
 class _ItemTrackerState extends State<ItemTracker> {
   DateTime _date = DateTime.now();
+  DateTime loaded;
 
-  Future<String> get _localPath async {
-    final directory = await getApplicationDocumentsDirectory();
-
-    return directory.path;
-  }
-
-  Future<File> get _localFile async {
-    final path = await _localPath;
-    return File('$path/due_dates.json');
-  }
-
-  Future<Map<String,int>> get _read async {
-    File file = await _localFile;
-    String text = await file.readAsString();
-    Map<String,int> dateMap = json.decode(text);
-    return dateMap;
+  @override
+  void initState() {
+    FileUtilis.readFromFile().then((value) {
+      if (value.length > 0) {
+        // var loadedDate = DateTime(value["year"], value["month"], value["day"]);
+        setState(() {
+          _date = DateTime(value["year"], value["month"], value["day"]);
+        });
+      }
+    });
   }
 
   Future<Null> selectDate(BuildContext context) async {
@@ -39,22 +33,16 @@ class _ItemTrackerState extends State<ItemTracker> {
       lastDate: DateTime(2100),
     );
 
-    if (picked != null && picked != _date) {
+    if (picked != null && picked != _date && loaded == null) {
       setState(() {
         _date = picked;
       });
-      Map<String, int> jsonMap = {
-        "day": _date.day,
-        "month": _date.month,
-        "year": _date.year,
+      Map<String, dynamic> jsonMap = {
+        "day": picked.day,
+        "month": picked.month,
+        "year": picked.year
       };
-      try {
-        File file = await _localFile;
-        String jsonString = json.encode(jsonMap);
-        await file.writeAsString(jsonString);
-      } catch (e) {
-        print("Error $e");
-      }
+      FileUtilis.saveToFile(jsonMap);
     }
   }
 
@@ -64,7 +52,7 @@ class _ItemTrackerState extends State<ItemTracker> {
       child: Column(
         children: [
           Text(
-            "Item",
+            widget.item,
             style: TextStyle(
                 color: Colors.white,
                 fontSize: 15.0,
@@ -85,8 +73,8 @@ class _ItemTrackerState extends State<ItemTracker> {
               selectDate(context);
             },
           ),
-          Text(_date == DateTime.now() ?
-            "${_date.month} - ${_date.day} - ${_date.year}" : "$_date[""," //fix this
+          Text(
+            "Due :  ${_date.month} - ${_date.day} - ${_date.year}",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w900,
