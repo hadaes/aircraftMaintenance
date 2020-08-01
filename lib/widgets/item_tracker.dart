@@ -19,7 +19,7 @@ class _ItemTrackerState extends State<ItemTracker> {
       if (value != null && value.containsKey(widget.item)) {
         var loadedDate = DateTime(value["${widget.item}"]["year"],
             value["${widget.item}"]["month"], value["${widget.item}"]["day"]);
-        print(value);
+        // print(value); debug statement
         setState(() {
           _date = loadedDate;
         });
