@@ -37,8 +37,8 @@ class Home extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ItemTracker(item: "ELT"),
-                // ItemTracker(),
-                // ItemTracker(),
+                ItemTracker(item: "Annual"),
+                ItemTracker(item: "Transponder"),
               ],
             ),
             Container(
