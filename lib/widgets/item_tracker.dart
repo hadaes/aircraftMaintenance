@@ -53,7 +53,7 @@ class _ItemTrackerState extends State<ItemTracker> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.17,
+      height: MediaQuery.of(context).size.height * 0.15,
       width: MediaQuery.of(context).size.width * 0.25,
       child: Column(
         children: <Widget>[

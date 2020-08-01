@@ -21,7 +21,7 @@ class Home extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
               child: const Text(
@@ -39,6 +39,14 @@ class Home extends StatelessWidget {
                 ItemTracker(item: "ELT"),
                 ItemTracker(item: "Annual"),
                 ItemTracker(item: "Transponder"),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ItemTracker(item: "Altimeter"),
+                ItemTracker(item: "VOR"),
+                // ItemTracker(item: "Transponder"),
               ],
             ),
             Container(
