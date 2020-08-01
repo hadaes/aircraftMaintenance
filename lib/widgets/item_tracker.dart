@@ -16,10 +16,12 @@ class _ItemTrackerState extends State<ItemTracker> {
   @override
   void initState() {
     FileUtilis.readFromFile().then((value) {
-      if (value.length > 0) {
-        // var loadedDate = DateTime(value["year"], value["month"], value["day"]);
+      if (value != null && value.containsKey(widget.item)) {
+        var loadedDate = DateTime(value["${widget.item}"]["year"],
+            value["${widget.item}"]["month"], value["${widget.item}"]["day"]);
+        print(value);
         setState(() {
-          _date = DateTime(value["year"], value["month"], value["day"]);
+          _date = loadedDate;
         });
       }
     });
@@ -38,9 +40,11 @@ class _ItemTrackerState extends State<ItemTracker> {
         _date = picked;
       });
       Map<String, dynamic> jsonMap = {
-        "day": picked.day,
-        "month": picked.month,
-        "year": picked.year
+        "${widget.item}": {
+          "day": picked.day,
+          "month": picked.month,
+          "year": picked.year
+        }
       };
       FileUtilis.saveToFile(jsonMap);
     }
@@ -49,8 +53,10 @@ class _ItemTrackerState extends State<ItemTracker> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height * 0.17,
+      width: MediaQuery.of(context).size.width * 0.25,
       child: Column(
-        children: [
+        children: <Widget>[
           Text(
             widget.item,
             style: TextStyle(
