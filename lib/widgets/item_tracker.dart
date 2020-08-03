@@ -61,19 +61,22 @@ class _ItemTrackerState extends State<ItemTracker> {
             widget.item,
             style: TextStyle(
                 color: Colors.white,
-                fontSize: 15.0,
+                fontSize: 14.0,
                 fontWeight: FontWeight.w600,
                 fontFamily: "Montserrat"),
+            maxLines: 1,
           ),
           RaisedButton(
             color: Colors.black,
             child: Text(
               "Set date",
               style: TextStyle(
-                  color: Colors.white,
-                  letterSpacing: 1.2,
-                  fontFamily: "Montserrat",
-                  fontWeight: FontWeight.w800),
+                color: Colors.white,
+                letterSpacing: 1.2,
+                fontFamily: "Montserrat",
+                fontWeight: FontWeight.w800,
+              ),
+              textAlign: TextAlign.center,
             ),
             onPressed: () {
               selectDate(context);
@@ -86,6 +89,8 @@ class _ItemTrackerState extends State<ItemTracker> {
               fontWeight: FontWeight.w900,
               fontFamily: "Montserrat",
             ),
+            maxLines: 2,
+            overflow: TextOverflow.fade,
           ),
         ],
       ),
