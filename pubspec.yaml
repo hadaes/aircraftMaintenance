@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   path_provider: ^1.6.11
+  auto_size_text: ^2.1.0
 
 
 
