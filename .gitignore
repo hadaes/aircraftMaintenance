@@ -58,3 +58,4 @@ ios/Flutter/Generated 7.xcconfig
 ios/Flutter/Debug.xcconfig
 ios/Flutter/Release.xcconfig
 
+.vscode/launch.json
