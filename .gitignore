@@ -46,3 +46,15 @@ ios/Flutter/Generated 2.xcconfig
 ios/Flutter/flutter_export_environment 2.sh
 ios/Flutter/flutter_export_environment 3.sh
 ios/Flutter/Generated 3.xcconfig
+ios/Flutter/flutter_export_environment 8.sh
+ios/Flutter/flutter_export_environment 4.sh
+ios/Flutter/flutter_export_environment 5.sh
+ios/Flutter/flutter_export_environment 6.sh
+ios/Flutter/flutter_export_environment 7.sh
+ios/Flutter/Generated 4.xcconfig
+ios/Flutter/Generated 5.xcconfig
+ios/Flutter/Generated 6.xcconfig
+ios/Flutter/Generated 7.xcconfig
+ios/Flutter/Debug.xcconfig
+ios/Flutter/Release.xcconfig
+
